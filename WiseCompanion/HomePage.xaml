@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WiseCompanion.HomePage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#888888">
+             BackgroundColor="#C3D6BD">
 
     <ScrollView>
 
@@ -35,74 +35,88 @@
 
             <!-- SOS Icon and Label -->
             <ImageButton x:Name="sosBtn"  
-                            Grid.Row="0" Grid.Column="0"
-                         Source="sos.png"
-                         Clicked="OnSOSButtonClicked"
-                         WidthRequest="150" 
-                         HeightRequest="150"
-                         Margin="40,10,10,10"/>
-            <Label Grid.Row="1" Grid.Column="0"
+                 Grid.Row="0" Grid.Column="0"
+                 Source="sos.png"
+                 Clicked="OnSOSButtonClicked"
+                 WidthRequest="150" 
+                 HeightRequest="200"
+                 Aspect="AspectFit" 
+                 Margin="40,0,0,-20"/>
+            <Label Grid.Row="0" Grid.Column="0"
                    Text="SOS"
-                   FontSize="Medium"
+                   FontSize="Large"
                    FontFamily="Arial"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   VerticalOptions="End" 
+                   Margin="30,-30,0,0"/>
 
-            <!-- Medication Icon and Label -->
-            <ImageButton Grid.Row="0" Grid.Column="2"
-                         Source="meds.png"
-                         Clicked="LogOutBtn"
-                         WidthRequest="150" 
-                         HeightRequest="150"
-                         Margin="20"/>
+
+            <!-- Meds Icon and Label -->
+            <ImageButton   
+                 Grid.Row="0" Grid.Column="2"
+                 Source="meds.png"
+                 Clicked="LogOutBtn"
+                 WidthRequest="150" 
+                 HeightRequest="200"
+                 Aspect="AspectFit" 
+                 Margin="40,0,40,-30"/>
             <Label Grid.Row="1" Grid.Column="2"
                    Text="Medication"
-                   FontSize="Medium"
+                   FontSize="Large"
                    FontFamily="Arial"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   VerticalOptions="End" 
+                   Margin="-20,-30,-20,0"/>
 
             <!-- Car Icon and Label -->
             <ImageButton Grid.Row="2" Grid.Column="1"
                          Source="car.png"
                          Clicked="FindMyCarBtn"
-                         WidthRequest="150" 
-                         HeightRequest="150"
-                         Margin="10"/>
+                         WidthRequest="200" 
+                         HeightRequest="200"
+                        Aspect="AspectFit" 
+                         Margin="10,0,0,-10"/>
             <Label Grid.Row="3" Grid.Column="1"
                    Text="Find My Car"
-                   FontSize="Medium"
+                   FontSize="Large"
                    FontFamily="Arial"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   Margin="-20,-30,-20,0"/>
 
             <!-- Activities Icon and Label -->
             <ImageButton Grid.Row="4" Grid.Column="0"
                          Source="activities.png"
                          Clicked="LogOutBtn"
                          WidthRequest="150" 
-                         HeightRequest="150"
-                         Margin="40,10,10,10"/>
+                         HeightRequest="200"
+                         Aspect="AspectFit"
+                         Margin="40,0,0,-20"/>
             <Label Grid.Row="5" Grid.Column="0"
-                   Text="Activities"
-                   FontSize="Medium"
+                   Text="Activities Near Me"
+                   FontSize="Large"
                    FontFamily="Arial"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   Margin="20,-30,-20,0"/>
 
             <!-- Settings Icon and Label -->
             <ImageButton Grid.Row="4" Grid.Column="2"
                          Source="settings.png"
                          Clicked="LogOutBtn"
                          WidthRequest="150" 
-                         HeightRequest="150"
-                         Margin="10"/>
+                         HeightRequest="200"
+                         Aspect="AspectFit"
+                         Margin="40,0,40,-30"/>
             <Label Grid.Row="5" Grid.Column="2"
                    Text="Settings"
-                   FontSize="Medium"
+                   FontSize="Large"
                    FontFamily="Arial"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center"
+                   Margin="-20,-30,-20,0"/>
 
             <!-- Log Out Button -->
             <Button Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3"
@@ -112,7 +126,7 @@
                     VerticalOptions="End"
                     BackgroundColor="White"
                     TextColor="Black"
-                    FontSize="Medium"
+                    FontSize="Large"
                     FontFamily="Arial"
                     FontAttributes="Bold"
                     WidthRequest="200"
