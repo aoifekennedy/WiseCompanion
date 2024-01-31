@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WiseCompanion.HomePage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#d3feb9">
+             BackgroundColor="#888888">
 
     <ScrollView>
 
@@ -36,7 +36,7 @@
             <!-- SOS Icon and Label -->
             <ImageButton x:Name="sosBtn"  
                             Grid.Row="0" Grid.Column="0"
-                         Source="sos_icon.png"
+                         Source="sos.png"
                          Clicked="OnSOSButtonClicked"
                          WidthRequest="150" 
                          HeightRequest="150"
@@ -50,7 +50,7 @@
 
             <!-- Medication Icon and Label -->
             <ImageButton Grid.Row="0" Grid.Column="2"
-                         Source="medication_icon.png"
+                         Source="meds.png"
                          Clicked="LogOutBtn"
                          WidthRequest="150" 
                          HeightRequest="150"
@@ -64,7 +64,7 @@
 
             <!-- Car Icon and Label -->
             <ImageButton Grid.Row="2" Grid.Column="1"
-                         Source="car_icon.png"
+                         Source="car.png"
                          Clicked="FindMyCarBtn"
                          WidthRequest="150" 
                          HeightRequest="150"
@@ -78,7 +78,7 @@
 
             <!-- Activities Icon and Label -->
             <ImageButton Grid.Row="4" Grid.Column="0"
-                         Source="activities_icon.png"
+                         Source="activities.png"
                          Clicked="LogOutBtn"
                          WidthRequest="150" 
                          HeightRequest="150"
@@ -92,7 +92,7 @@
 
             <!-- Settings Icon and Label -->
             <ImageButton Grid.Row="4" Grid.Column="2"
-                         Source="settings_icon.png"
+                         Source="settings.png"
                          Clicked="LogOutBtn"
                          WidthRequest="150" 
                          HeightRequest="150"

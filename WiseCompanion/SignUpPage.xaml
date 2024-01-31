@@ -2,12 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WiseCompanion.SignUpPage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#d3feb9">
+             BackgroundColor="White">
 
     <Grid RowDefinitions="*, Auto" ColumnDefinitions="*">
 
         <ScrollView Grid.Row="0" Grid.Column="0">
-            <VerticalStackLayout Spacing="20" Padding="30" HorizontalOptions="FillAndExpand" BackgroundColor="#d3feb9">
+            <VerticalStackLayout Spacing="20" Padding="30" HorizontalOptions="FillAndExpand">
 
                 <!-- Container for Image and Title -->
                 <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
@@ -87,7 +87,7 @@
                 <!-- Sign Up Button -->
                 <Button Text="Sign Up"
                     Clicked="SignUpBtn"
-                    BackgroundColor="#2196F3"
+                    BackgroundColor="#ACB9E8"
                     TextColor="Black"
                     CornerRadius="20"
                     FontAttributes="Bold"
@@ -110,7 +110,7 @@
                 <Button Grid.Row="1" Grid.Column="0"
                     Text="Go to Sign In"
                     Clicked="RedirectSignInBtn"
-                    BackgroundColor="White"
+                    BackgroundColor="#DFB1B6"
                     TextColor="Black"
                     CornerRadius="10"
                     FontAttributes="Bold"

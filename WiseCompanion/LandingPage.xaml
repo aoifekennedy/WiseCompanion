@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WiseCompanion.LandingPage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#d3feb9">
+             BackgroundColor="White">
 
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="30" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
@@ -27,7 +27,7 @@
             <!-- Stylish Buttons -->
             <Button Text="Sign Up"
                     Clicked="OnSignUpClicked"
-                    BackgroundColor="White"
+                    BackgroundColor="#ACB9E8"
                     TextColor="Black"
                     CornerRadius="20"
                     FontAttributes="Bold"
@@ -39,7 +39,7 @@
 
             <Button Text="Sign In"
                     Clicked="OnSignInClicked"
-                    BackgroundColor="White"
+                    BackgroundColor="#ACB9E8"
                     TextColor="Black"
                     CornerRadius="20"
                     FontAttributes="Bold" 
