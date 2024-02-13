@@ -1,0 +1,23 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WiseCompanion.MedicationPage"
+             Title="My Medications">
+    <VerticalStackLayout>
+        <Button Text="Add Medication" Clicked="OnAddMedicationClicked"/>
+        <ListView x:Name="medicationList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="FillAndExpand">
+                            <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"/>
+                            <Label Text="{Binding Dosage}" VerticalOptions="Center" Margin="5,0" HorizontalOptions="Start"/>
+                            <Label Text="{Binding Time}" VerticalOptions="Center" Margin="5,0" HorizontalOptions="Start"/>
+                            <Button Text="Delete" VerticalOptions="Center" Clicked="OnRemoveMedicationClicked" CommandParameter="{Binding .}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>

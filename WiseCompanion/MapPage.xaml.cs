@@ -1,36 +1,33 @@
-namespace WiseCompanion;
-
+using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Maps;
-using Microsoft.Maui.Maps;
+using Microsoft.Maui.ApplicationModel; 
 
+namespace WiseCompanion;
 
 public partial class MapPage : ContentPage
 {
     public MapPage()
     {
         InitializeComponent();
-
-
-        Location location = new Location(52.6736, -8.5724);
-        MapSpan mapSpan = new MapSpan(location, 0.01, 0.01);
-
-        Map map = new Map(mapSpan)
-        {
-            IsShowingUser = true, // This will show the user's current location on the map
-            MapType = MapType.Street
-        };
-
-
-        Content = map;
-
     }
 
-    private async void BackButton_Clicked(object sender, EventArgs e)
+    private async void OpenInGoogleMapsClicked(object sender, EventArgs e)
     {
-        var homePage = new HomePage();
-        await Navigation.PushModalAsync(homePage);
+        double destinationLatitude = 52.6736;
+        double destinationLongitude = -8.5724;
+
+        // Construct the Google Maps URL
+        string googleMapsUrl = $"https://www.google.com/maps/dir/?api=1&destination={destinationLatitude},{destinationLongitude}&travelmode=driving";
+
+        try
+        {
+            await Launcher.Default.OpenAsync(new Uri(googleMapsUrl));
+        }
+        catch (Exception ex)
+        {
+            
+            await DisplayAlert("Error", "Unable to open Google Maps: " + ex.Message, "OK");
+        }
     }
-
 }
-

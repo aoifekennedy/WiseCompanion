@@ -1,0 +1,9 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WiseCompanion.TimePickerPage"
+             Title="Select Time">
+    <VerticalStackLayout Spacing="25" Padding="30">
+        <TimePicker x:Name="timePicker" Format="t" />
+        <Button Text="Confirm" Clicked="OnConfirmClicked" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -57,11 +57,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Assets\medications.csv" />
+	  <None Remove="Resources\medications.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Assets\medications.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CsvHelper" Version="31.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.6" />
 		<PackageReference Include="Microsoft.Maui.Essentials" Version="8.0.6" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -73,6 +84,15 @@
 	  </Compile>
 	  <Compile Update="MapPage.xaml.cs">
 	    <DependentUpon>MapPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="ActivitiesPage.xaml.cs">
+	    <DependentUpon>ActivitiesPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MedicationPage.xaml.cs">
+	    <DependentUpon>MedicationPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="MedicationSearch.xaml.cs">
+	    <DependentUpon>MedicationSearch.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="SignUpPage.xaml.cs">
 	    <DependentUpon>SignUpPage.xaml</DependentUpon>
@@ -89,12 +109,26 @@
 	  <MauiXaml Update="MapPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="ActivitiesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MedicationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MedicationSearch.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="SignUpPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SignInPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="TimePicker.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionWiseCompanionHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 
 </Project>

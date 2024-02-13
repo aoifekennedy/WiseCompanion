@@ -3,9 +3,17 @@
        xmlns:pages="clr-namespace:WiseCompanion"
        x:Class="WiseCompanion.AppShell">
 
-    <ShellContent Route="LandingPage" ContentTemplate="{DataTemplate pages:LandingPage}" />
+   <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+     <ShellContent Route="LandingPage" ContentTemplate="{DataTemplate pages:LandingPage}" />
     <ShellContent Route="SignUpPage" ContentTemplate="{DataTemplate pages:SignUpPage}" />
     <ShellContent Route="SignInPage" ContentTemplate="{DataTemplate pages:SignInPage}" />
     <ShellContent Route="HomePage" ContentTemplate="{DataTemplate pages:HomePage}" />
     <ShellContent Route="MapPage" ContentTemplate="{DataTemplate pages:MapPage}" />
+    <ShellContent Route="MedicationPage" ContentTemplate="{DataTemplate pages:MedicationPage}" />
+    <ShellContent Route="MedicationSearch" ContentTemplate="{DataTemplate pages:MedicationSearch}" />
+
+    </FlyoutItem>
 </Shell>
+    
+    

@@ -56,7 +56,7 @@
             <ImageButton   
                  Grid.Row="0" Grid.Column="2"
                  Source="meds.png"
-                 Clicked="LogOutBtn"
+                 Clicked="MedicationBtn"
                  WidthRequest="150" 
                  HeightRequest="200"
                  Aspect="AspectFit" 
@@ -89,7 +89,7 @@
             <!-- Activities Icon and Label -->
             <ImageButton Grid.Row="4" Grid.Column="0"
                          Source="activities.png"
-                         Clicked="LogOutBtn"
+                         Clicked="ActivitiesBtn"
                          WidthRequest="150" 
                          HeightRequest="200"
                          Aspect="AspectFit"

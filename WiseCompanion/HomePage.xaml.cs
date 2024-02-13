@@ -37,15 +37,24 @@ public partial class HomePage : ContentPage
         }
         catch (ArgumentNullException)
         {
-            // Number was null or white space
         }
         catch (FeatureNotSupportedException)
         {
-            // Phone Dialer is not supported on this device.
         }
         catch (Exception)
         {
-            // Other error has occurred.
         }
+    }
+
+    private async void ActivitiesBtn(object sender, EventArgs e)
+    {
+        var activitiesPage = new ActivitiesPage();
+        await Navigation.PushModalAsync(activitiesPage);
+    }
+
+    private async void MedicationBtn(object sender, EventArgs e)
+    {
+        var medicationPage = new MedicationPage();
+        await Navigation.PushModalAsync(medicationPage);
     }
 }
