@@ -15,13 +15,11 @@ namespace WiseCompanion
             var entryUsername = entryName.Text;
             var entrypassword = entryPassword.Text;
             var entryemail = entryEmail.Text;
-            var phonenumber = phoneNumber.Text;
             var sosphoneNumber = sosPhoneNumber.Text;
 
             if (string.IsNullOrWhiteSpace(entryUsername) ||
                 string.IsNullOrWhiteSpace(entrypassword) ||
                 string.IsNullOrWhiteSpace(entryemail) ||
-                string.IsNullOrWhiteSpace(phonenumber) ||
                 string.IsNullOrWhiteSpace(sosphoneNumber))
             {
                 await DisplayAlert("Error", "Please fill in every entry!", "OK");
