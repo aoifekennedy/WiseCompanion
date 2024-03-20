@@ -3,7 +3,7 @@
              x:Class="WiseCompanion.MedicationPage"
              Title="My Medications">
     <VerticalStackLayout>
-        <Button Text="Add Medication" Clicked="OnAddMedicationClicked"/>
+        <Button x:Name="BtnAddMedication" Text="Add Medication" Clicked="OnAddMedicationClicked"/>
         <ListView x:Name="medicationList">
             <ListView.ItemTemplate>
                 <DataTemplate>

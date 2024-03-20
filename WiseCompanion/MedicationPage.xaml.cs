@@ -13,7 +13,7 @@ public partial class MedicationPage : ContentPage
         InitializeComponent();
         medicationList.ItemsSource = Medications;
 
-        //LoadInitialMedications();
+        LoadInitialMedications();
 
         MessagingCenter.Subscribe<MedicationSearch, Medication>(this, "AddMedication", (sender, arg) =>
         {
@@ -22,13 +22,15 @@ public partial class MedicationPage : ContentPage
                 Medications.Add(arg); 
             });
         });
+
+        BtnAddMedication.IsVisible = WiseCompanion.Global.AdminYN;  
     }
 
- /*   private void LoadInitialMedications()
+    private void LoadInitialMedications()
     {
         Medications.Add(new Medication { Name = "Aspirin", Dosage = "100mg" });
         Medications.Add(new Medication { Name = "Ibuprofen", Dosage = "200mg" });
-    }*/
+    }
 
     private async void OnAddMedicationClicked(object sender, EventArgs e)
     {

@@ -26,7 +26,7 @@ namespace ServiceReference1
         System.Threading.Tasks.Task<bool> LoginAsync(string emailAddress, string password);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/SignUp", ReplyAction="http://tempuri.org/IKentapAFE/SignUpResponse")]
-        System.Threading.Tasks.Task<System.Xml.XmlElement> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword);
+        System.Threading.Tasks.Task<string> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -87,7 +87,7 @@ namespace ServiceReference1
             return base.Channel.LoginAsync(emailAddress, password);
         }
         
-        public System.Threading.Tasks.Task<System.Xml.XmlElement> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword)
+        public System.Threading.Tasks.Task<string> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword)
         {
             return base.Channel.SignUpAsync(emailAddress, password, name, sosPhoneNumber, adminEmail, adminPassword);
         }

@@ -29,7 +29,7 @@ namespace WiseCompanion
                 client.Close();
                 WiseCompanion.Global.AdminYN = result;
                 WiseCompanion.Global.EmailAddress = entryemail;
-                //
+                
 
                var homePage = new HomePage();
                 await Navigation.PushModalAsync(homePage);
