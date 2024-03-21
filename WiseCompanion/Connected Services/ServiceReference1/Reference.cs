@@ -27,6 +27,15 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/SignUp", ReplyAction="http://tempuri.org/IKentapAFE/SignUpResponse")]
         System.Threading.Tasks.Task<string> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/IsThereACurrentActiveLocation", ReplyAction="http://tempuri.org/IKentapAFE/IsThereACurrentActiveLocationResponse")]
+        System.Threading.Tasks.Task<bool> IsThereACurrentActiveLocationAsync(string emailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/SaveCurrentLocation", ReplyAction="http://tempuri.org/IKentapAFE/SaveCurrentLocationResponse")]
+        System.Threading.Tasks.Task<bool> SaveCurrentLocationAsync(string emailAddress, string Longitude, string Latitude);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/RemoveCurrentLocation", ReplyAction="http://tempuri.org/IKentapAFE/RemoveCurrentLocationResponse")]
+        System.Threading.Tasks.Task<bool> RemoveCurrentLocationAsync(string emailAddress);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
@@ -90,6 +99,21 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<string> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword)
         {
             return base.Channel.SignUpAsync(emailAddress, password, name, sosPhoneNumber, adminEmail, adminPassword);
+        }
+        
+        public System.Threading.Tasks.Task<bool> IsThereACurrentActiveLocationAsync(string emailAddress)
+        {
+            return base.Channel.IsThereACurrentActiveLocationAsync(emailAddress);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SaveCurrentLocationAsync(string emailAddress, string Longitude, string Latitude)
+        {
+            return base.Channel.SaveCurrentLocationAsync(emailAddress, Longitude, Latitude);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RemoveCurrentLocationAsync(string emailAddress)
+        {
+            return base.Channel.RemoveCurrentLocationAsync(emailAddress);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

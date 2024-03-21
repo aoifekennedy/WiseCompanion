@@ -12,7 +12,7 @@ public partial class ActivitiesPage : ContentPage
         try
         {
             var request = new GeolocationRequest(GeolocationAccuracy.Medium);
-            var currentLocation = await Geolocation.Default.GetLocationAsync(request);
+            var currentLocation = await Geolocation.GetLocationAsync(request);
             return currentLocation;
         }
         catch (Exception ex)
@@ -22,6 +22,7 @@ public partial class ActivitiesPage : ContentPage
             return null;
         }
     }
+
 
     private async void FindActivitiesNearMeClicked(object sender, EventArgs e)
     {
