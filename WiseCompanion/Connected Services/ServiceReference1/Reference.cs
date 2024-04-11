@@ -19,11 +19,29 @@ namespace ServiceReference1
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/FindMyCar", ReplyAction="http://tempuri.org/IKentapAFE/FindMyCarResponse")]
         System.Threading.Tasks.Task<System.Xml.XmlElement> FindMyCarAsync(string emailAddress);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/GetSettings", ReplyAction="http://tempuri.org/IKentapAFE/GetSettingsResponse")]
+        System.Threading.Tasks.Task<System.Xml.XmlElement> GetSettingsAsync(string emailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/GetMedication", ReplyAction="http://tempuri.org/IKentapAFE/GetMedicationResponse")]
+        System.Threading.Tasks.Task<System.Xml.XmlElement> GetMedicationAsync(string emailAddress);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/GetMedicationList", ReplyAction="http://tempuri.org/IKentapAFE/GetMedicationListResponse")]
+        System.Threading.Tasks.Task<System.Xml.XmlElement> GetMedicationListAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/GetSOS", ReplyAction="http://tempuri.org/IKentapAFE/GetSOSResponse")]
         System.Threading.Tasks.Task<string> GetSOSAsync(string emailAddress);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/Login", ReplyAction="http://tempuri.org/IKentapAFE/LoginResponse")]
         System.Threading.Tasks.Task<bool> LoginAsync(string emailAddress, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/SaveSettings", ReplyAction="http://tempuri.org/IKentapAFE/SaveSettingsResponse")]
+        System.Threading.Tasks.Task<bool> SaveSettingsAsync(string emailAddress, string FontFamily, int FontSize, string BackgroundColour);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/DeleteMedication", ReplyAction="http://tempuri.org/IKentapAFE/DeleteMedicationResponse")]
+        System.Threading.Tasks.Task<bool> DeleteMedicationAsync(string emailAddress, string MedicationDescription, int Dosage, string Time);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/AddMedication", ReplyAction="http://tempuri.org/IKentapAFE/AddMedicationResponse")]
+        System.Threading.Tasks.Task<bool> AddMedicationAsync(string emailAddress, string MedicationDescription, int Dosage, string Time);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IKentapAFE/SignUp", ReplyAction="http://tempuri.org/IKentapAFE/SignUpResponse")]
         System.Threading.Tasks.Task<string> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword);
@@ -86,6 +104,21 @@ namespace ServiceReference1
             return base.Channel.FindMyCarAsync(emailAddress);
         }
         
+        public System.Threading.Tasks.Task<System.Xml.XmlElement> GetSettingsAsync(string emailAddress)
+        {
+            return base.Channel.GetSettingsAsync(emailAddress);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlElement> GetMedicationAsync(string emailAddress)
+        {
+            return base.Channel.GetMedicationAsync(emailAddress);
+        }
+        
+        public System.Threading.Tasks.Task<System.Xml.XmlElement> GetMedicationListAsync()
+        {
+            return base.Channel.GetMedicationListAsync();
+        }
+        
         public System.Threading.Tasks.Task<string> GetSOSAsync(string emailAddress)
         {
             return base.Channel.GetSOSAsync(emailAddress);
@@ -94,6 +127,21 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<bool> LoginAsync(string emailAddress, string password)
         {
             return base.Channel.LoginAsync(emailAddress, password);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SaveSettingsAsync(string emailAddress, string FontFamily, int FontSize, string BackgroundColour)
+        {
+            return base.Channel.SaveSettingsAsync(emailAddress, FontFamily, FontSize, BackgroundColour);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteMedicationAsync(string emailAddress, string MedicationDescription, int Dosage, string Time)
+        {
+            return base.Channel.DeleteMedicationAsync(emailAddress, MedicationDescription, Dosage, Time);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddMedicationAsync(string emailAddress, string MedicationDescription, int Dosage, string Time)
+        {
+            return base.Channel.AddMedicationAsync(emailAddress, MedicationDescription, Dosage, Time);
         }
         
         public System.Threading.Tasks.Task<string> SignUpAsync(string emailAddress, string password, string name, string sosPhoneNumber, string adminEmail, string adminPassword)

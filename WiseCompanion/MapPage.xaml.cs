@@ -17,8 +17,7 @@ public partial class MapPage : ContentPage
     {
         InitializeComponent();
 
-
-    }
+     }
 
     private async void OpenInGoogleMapsClicked(object sender, EventArgs e)
     {
@@ -86,7 +85,8 @@ public partial class MapPage : ContentPage
                 await client.SaveCurrentLocationAsync(emailAddress, location.Latitude.ToString(), location.Longitude.ToString());
                 client.Close();
 
-                await DisplayAlert("Success", "Car location added successfully.", "OK");
+                AddCarLocationButton.IsVisible = false;
+                RemoveCarLocationButton.IsVisible = true;
             }
             else
             {
@@ -100,8 +100,65 @@ public partial class MapPage : ContentPage
 
     }
 
-
-
-
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await UpdateLocationButtonAsync();
     }
+
+    private async Task UpdateLocationButtonAsync()
+    {
+        var emailAddress = WiseCompanion.Global.EmailAddress;
+        KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+        bool hasActiveLocation = await client.IsThereACurrentActiveLocationAsync(emailAddress);
+        client.Close();
+
+        Device.BeginInvokeOnMainThread(() =>
+        {
+            AddCarLocationButton.IsVisible = !hasActiveLocation;
+            RemoveCarLocationButton.IsVisible = hasActiveLocation;
+        });
+    }
+
+
+
+    private async void RemoveCarLocationClicked(object sender, EventArgs e)
+    {
+        try
+        {
+            var emailAddress = WiseCompanion.Global.EmailAddress;
+            KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+
+            var result = await client.RemoveCurrentLocationAsync(emailAddress);
+            client.Close();
+
+            if (result)
+            {
+                AddCarLocationButton.IsVisible = true;
+                RemoveCarLocationButton.IsVisible = false;
+            }
+            else
+            {
+                await DisplayAlert("Error", "Failed to remove car location.", "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Error", $"Error removing car location: {ex.Message}", "OK");
+        }
+    }
+
+    private async void BackButtonClicked(object sender, EventArgs e)
+    {
+        var homePage = new HomePage();
+        await Navigation.PushModalAsync(homePage);
+    }
+
+}
+
+
+
+
+
+
 

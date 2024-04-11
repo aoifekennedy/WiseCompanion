@@ -1,16 +1,79 @@
 namespace WiseCompanion;
 using ServiceReference1;
+using System.Diagnostics;
 using System.Net.Mail;
-
+using WiseCompanion.ViewModels;
+using Microsoft.Maui.Dispatching;
 public partial class HomePage : ContentPage
 {
     public HomePage()
     {
         InitializeComponent();
-
         sosBtn.Clicked += OnSOSButtonClicked;
-    
+
+        BindingContext = new SettingsViewModel(Dispatcher);
+
+        SubscribeToSettingsChanges();
     }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        (BindingContext as SettingsViewModel)?.LoadSettings();
+    }
+
+    private void SubscribeToSettingsChanges()
+    {
+        MessagingCenter.Subscribe<SettingsViewModel, string>(this, "BackgroundColorChanged", (sender, colorHex) =>
+        {
+            Dispatcher.Dispatch(() =>
+            {
+                UpdateBackgroundColor(colorHex);
+            });
+        });
+
+        MessagingCenter.Subscribe<SettingsViewModel, string>(this, "FontFamilyChanged", (sender, font) =>
+        {
+            UpdateFontFamily(font);
+        });
+    }
+
+    private void UpdateFontFamily(string fontFamily)
+    {
+        var contentGrid = this.Content.FindByName<Grid>("ContentGrid");
+        if (contentGrid != null)
+        {
+            foreach (var view in contentGrid.Children)
+            {
+                if (view is Label label)
+                {
+                    label.FontFamily = fontFamily;
+                }
+                else if (view is Button button)
+                {
+                    button.FontFamily = fontFamily;
+                }
+            }
+        }
+    }
+
+    private void UpdateBackgroundColor(string colorHex)
+    {
+        try
+        {
+            BackgroundColor = Color.FromArgb(colorHex);
+            var contentGrid = this.Content.FindByName<Grid>("ContentGrid");
+            if (contentGrid != null)
+            {
+                contentGrid.BackgroundColor = Color.FromArgb(colorHex);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to update background color: {ex.Message}");
+        }
+    }
+
 
     private async void LogOutBtn(object sender, EventArgs e)
     {
@@ -28,6 +91,12 @@ public partial class HomePage : ContentPage
     {
         var mapPage = new MapPage();
         await Navigation.PushModalAsync(mapPage);
+    }
+
+    private async void SettingsBtn(object sender, EventArgs e)
+    {
+        var settingsPage = new SettingsPage();
+        await Navigation.PushModalAsync(settingsPage);
     }
 
     private async void OnSOSButtonClicked(object sender, EventArgs e)
@@ -78,3 +147,5 @@ public partial class HomePage : ContentPage
         await Navigation.PushModalAsync(medicationPage);
     }
 }
+
+

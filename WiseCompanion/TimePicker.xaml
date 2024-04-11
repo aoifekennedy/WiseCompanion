@@ -4,6 +4,8 @@
              Title="Select Time">
     <VerticalStackLayout Spacing="25" Padding="30">
         <TimePicker x:Name="timePicker" Format="t" />
+        <Label x:Name="MedicationQuantity" Text="Quantity" />
+        <Entry x:Name="TextBoxQuantity" />
         <Button Text="Confirm" Clicked="OnConfirmClicked" />
     </VerticalStackLayout>
 </ContentPage>

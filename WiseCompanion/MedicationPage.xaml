@@ -1,4 +1,4 @@
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<!--<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WiseCompanion.MedicationPage"
              Title="My Medications">
@@ -17,7 +17,81 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
+        </ListView>-->
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:WiseCompanion.ViewModels"
+             x:Class="WiseCompanion.MedicationPage"
+             Title="Medication Page"
+             BackgroundColor="{Binding SelectedBackgroundColor}">
+    <VerticalStackLayout>
+        <Button x:Name="BtnAddMedication" 
+                Text="Add Medication" 
+                Clicked="OnAddMedicationButtonClicked"
+                BackgroundColor="#DFB1B6" 
+                TextColor="Black" 
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Margin="10"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Text="Medication" FontAttributes="Bold"/>
+            <Label Grid.Column="1" Text="Quantity" FontAttributes="Bold"  Margin="-25,0,0,0"/>
+            <Label Grid.Column="2" Text="Time" FontAttributes="Bold" Margin="-15,0,0,0" />
+        </Grid>
+
+        <ListView x:Name="medicationList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding MedicationDescription}" Grid.Column="0" VerticalOptions="Center"/>
+                            <Label Text="{Binding Dosage}" Grid.Column="1" VerticalOptions="Center" Margin="5,0"/>
+                            <Label Text="{Binding Time}" Grid.Column="2" VerticalOptions="Center" Margin="5,0"/>
+                            <Button Text="Delete" Grid.Column="3" 
+                                    VerticalOptions="Center" 
+                                    BackgroundColor="#DFB1B6" 
+                                    TextColor="Black" 
+                                    FontAttributes="Bold" 
+                                    FontSize="Medium"
+                                    WidthRequest="100" HeightRequest="40"
+                                    Clicked="OnRemoveMedicationClicked" CommandParameter="{Binding .}">
+                            </Button>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
+        <Button Text="Back to Home Page" 
+                Clicked="BackButtonClicked"
+                BackgroundColor="#DFB1B6" 
+                TextColor="Black" 
+                CornerRadius="10"
+                FontAttributes="Bold" 
+                FontFamily="Arial" 
+                FontSize="Medium"
+                VerticalOptions="End" 
+                HorizontalOptions="Start" 
+                WidthRequest="200" 
+                HeightRequest="50"/>
     </VerticalStackLayout>
 </ContentPage>

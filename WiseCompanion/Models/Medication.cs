@@ -8,7 +8,7 @@ namespace WiseCompanion.Models
 {
     public class Medication
     {
-        public string Name { get; set; }
+        public string MedicationDescription { get; set; }
         public string Dosage { get; set; }
         public string Time { get; set; }
 

@@ -29,7 +29,7 @@ public partial class ActivitiesPage : ContentPage
         var currentLocation = await GetCurrentLocationAsync();
         if (currentLocation != null)
         {
-            string query = Uri.EscapeDataString("Senior Activities Near Me");
+            string query = Uri.EscapeDataString("Older Adult Activities Near Me");
 
             // Construct the Google Maps URL
             string mapsUrl = $"https://www.google.com/maps/search/?api=1&query={query}&center={currentLocation.Latitude},{currentLocation.Longitude}";
@@ -49,6 +49,12 @@ public partial class ActivitiesPage : ContentPage
             // Inform the user that the location could not be determined
             Console.WriteLine("Current location is unavailable.");
         }
+    }
+
+    private async void BackButtonClicked(object sender, EventArgs e)
+    {
+        var homePage = new HomePage();
+        await Navigation.PushModalAsync(homePage);
     }
 
 }

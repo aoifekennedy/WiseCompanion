@@ -20,5 +20,19 @@
                 FontSize="25"
                 WidthRequest="300" 
                 HeightRequest="75"/>
+
+        <Button Grid.Row="1" Grid.Column="0"
+            Text="Back to Home Page"
+            Clicked="BackButtonClicked"
+            BackgroundColor="#DFB1B6"
+            TextColor="Black"
+            CornerRadius="10"
+            FontAttributes="Bold"
+            FontFamily="Arial"
+            FontSize="15"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            WidthRequest="200"
+            HeightRequest="50"/>
     </VerticalStackLayout>
 </ContentPage>

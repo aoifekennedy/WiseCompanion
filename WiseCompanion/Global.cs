@@ -10,5 +10,8 @@ namespace WiseCompanion
     {
         public static Boolean AdminYN;
         public static string EmailAddress;
+        public static string BackgroundColor;
+        public static int FontSize;
+        public static string FontFamily;
     }
 }

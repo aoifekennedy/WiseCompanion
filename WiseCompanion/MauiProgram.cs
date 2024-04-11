@@ -14,7 +14,11 @@ namespace WiseCompanion
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Arial.ttf", "Arial");
+                    fonts.AddFont("Times New Roman.ttf", "Times New Roman");
+                    fonts.AddFont("Caveat.ttf", "Caveat");
                 });
+
 
 #if DEBUG
     		builder.Logging.AddDebug();

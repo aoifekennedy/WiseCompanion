@@ -11,7 +11,8 @@ public partial class TimePickerPage : ContentPage
 
     private void OnConfirmClicked(object sender, EventArgs e)
     {
-        var selectedTime = timePicker.Time; // Get the time from the TimePicker
+        var selectedTime = timePicker.Time;
         MessagingCenter.Send(this, "TimeSelected", selectedTime);
+
     }
 }

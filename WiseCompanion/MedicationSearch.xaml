@@ -3,6 +3,62 @@
              x:Class="WiseCompanion.MedicationSearch"
              Title="Search Medications">
     <StackLayout>
+
+        <Label Text="Choose a medication:" 
+               FontSize="Medium"/>
+        <Picker x:Name="PickerMedication"/>
+
+        <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+
+        <Label Text="Quantity to take:" 
+               FontSize="Medium"/>
+        <Entry x:Name="EntryQuantity"/>
+
+        <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+
+        <Label Text="Choose a time:"
+               FontSize="Medium"/>
+        <TimePicker x:Name="TimePicker" Format="t" />
+
+        <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+
+        <Button Grid.Row="1" Grid.Column="0"
+            Text="Confirm"
+            Clicked="OnConfirmClicked"
+            BackgroundColor="#DFB1B6"
+            TextColor="Black"
+            CornerRadius="10"
+            FontAttributes="Bold"
+            FontFamily="Arial"
+            FontSize="Medium"
+            VerticalOptions="End"
+            HorizontalOptions="Start"
+            WidthRequest="200"
+            HeightRequest="50"/>
+
+        <BoxView HeightRequest="50" BackgroundColor="Transparent"/>
+
+        <Button Grid.Row="1" Grid.Column="0"
+                Text="Back to Medication Page"
+                Clicked="BackButtonClicked"
+                BackgroundColor="#DFB1B6"
+                TextColor="Black"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                FontFamily="Arial"
+                FontSize="Medium"
+                VerticalOptions="End"
+                HorizontalOptions="Start"
+                WidthRequest="250"
+                HeightRequest="50"/>
+    </StackLayout>
+</ContentPage>
+
+<!--<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WiseCompanion.MedicationSearch"
+             Title="Search Medications">
+    <StackLayout>
         <SearchBar x:Name="searchBar" 
                    Placeholder="Search medications..." 
                    TextChanged="OnSearchBarTextChanged" />
@@ -16,4 +72,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-</ContentPage>
+</ContentPage>-->

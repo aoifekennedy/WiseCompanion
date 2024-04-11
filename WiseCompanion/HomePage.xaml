@@ -1,15 +1,18 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:WiseCompanion.ViewModels"
              x:Class="WiseCompanion.HomePage"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#C3D6BD">
-
+             BackgroundColor="{Binding SelectedBackgroundColor, Mode=TwoWay}">
+    
     <ScrollView>
 
-        <Grid Padding="20"
+        <Grid x:Name="ContentGrid" 
+              Padding="20"
               HorizontalOptions="CenterAndExpand"
               VerticalOptions="CenterAndExpand"
-              RowSpacing="10">
+              RowSpacing="10"
+              BackgroundColor="{Binding SelectedBackgroundColor, Mode=TwoWay}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -45,7 +48,7 @@
             <Label Grid.Row="0" Grid.Column="0"
                    Text="SOS"
                    FontSize="Large"
-                   FontFamily="Arial"
+                   FontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    VerticalOptions="End" 
@@ -64,7 +67,7 @@
             <Label Grid.Row="1" Grid.Column="2"
                    Text="Medication"
                    FontSize="Large"
-                   FontFamily="Arial"
+                   FontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    VerticalOptions="End" 
@@ -81,7 +84,7 @@
             <Label Grid.Row="3" Grid.Column="1"
                    Text="Find My Car"
                    FontSize="Large"
-                   FontFamily="Arial"
+                   FontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    Margin="-20,-30,-20,0"/>
@@ -97,7 +100,7 @@
             <Label Grid.Row="5" Grid.Column="0"
                    Text="Activities Near Me"
                    FontSize="Large"
-                   FontFamily="Arial"
+                   FontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    Margin="20,-30,-20,0"/>
@@ -105,7 +108,7 @@
             <!-- Settings Icon and Label -->
             <ImageButton Grid.Row="4" Grid.Column="2"
                          Source="settings.png"
-                         Clicked="LogOutBtn"
+                         Clicked="SettingsBtn"
                          WidthRequest="150" 
                          HeightRequest="200"
                          Aspect="AspectFit"
@@ -113,7 +116,7 @@
             <Label Grid.Row="5" Grid.Column="2"
                    Text="Settings"
                    FontSize="Large"
-                   FontFamily="Arial"
+                   FontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    Margin="-20,-30,-20,0"/>
@@ -127,7 +130,7 @@
                     BackgroundColor="White"
                     TextColor="Black"
                     FontSize="Large"
-                    FontFamily="Arial"
+                    FontFamily="{Binding SelectedFontFamily, Mode=TwoWay}"
                     FontAttributes="Bold"
                     WidthRequest="200"
                     HeightRequest="50"
