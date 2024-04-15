@@ -9,7 +9,6 @@
         <ScrollView Grid.Row="0" Grid.Column="0">
             <VerticalStackLayout Spacing="20" Padding="30" HorizontalOptions="FillAndExpand">
 
-                <!-- Container for Image and Title -->
                 <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
                     <!-- App Logo -->
                     <Image Source="elderly_icon.png" 
@@ -17,7 +16,6 @@
                            WidthRequest="200" 
                            HeightRequest="200"/>
 
-                    <!-- Title with Custom Font and Size -->
                     <Label Text="WiseCompanion" 
                            FontSize="32"
                            FontAttributes="Bold"
@@ -82,7 +80,7 @@
                     CornerRadius="10"
                     FontAttributes="Bold"
                     FontFamily="Arial"
-                    FontSize="15"
+                    FontSize="20"
                     VerticalOptions="End"
                     HorizontalOptions="Start"
                     WidthRequest="200"

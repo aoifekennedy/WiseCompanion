@@ -41,7 +41,7 @@ namespace WiseCompanion
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", "An error occurred while attempting to sign up: " + ex.Message, "OK");
+                await DisplayAlert("Error", ex.Message, "OK");
             }
         }
 

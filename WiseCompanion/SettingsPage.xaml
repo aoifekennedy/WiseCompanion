@@ -8,9 +8,10 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
             <Label Text="Select a Background Colour:"/>
-            <StackLayout x:Name="colorPaletteStack" 
-                         Orientation="Horizontal" 
-                         HorizontalOptions="CenterAndExpand"/>
+            <Grid x:Name="colorPaletteStack"
+                  HorizontalOptions="CenterAndExpand"
+                  RowDefinitions="Auto, Auto"
+                  ColumnDefinitions="*, *, *, *, *"/>
 
             <Label Text="Select Font:" />
             <Picker x:Name="FontPicker"

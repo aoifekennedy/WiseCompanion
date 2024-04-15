@@ -80,12 +80,45 @@ public partial class SettingsPage : ContentPage
     {
         var colors = new string[]
         {
-            "#FFFFFF", // White
-            "#F5D7DC", // Pink
-            "#C3D6BD", // Green
-            "#ACB9E8", // Blue
-            "#00FFFF"  // Aqua
+        "#FFFFFF", // White
+        "#FFB3BA", // Pastel Red
+        "#FFDFBA", // Pastel Orange
+        "#FFFFBA", // Pastel Yellow
+        "#C3D6BD", // Pastel Green
+        "#BAE1FF", // Pastel Blue
+        "#F5D7DC", // Pastel Pink
+        "#D3ECEC", // Pastel Cyan
+        "#ECC8EC", // Pastel Purple
+        "#ACB9E8", // Pastel Blue
         };
+
+        int row = 0, column = 0;
+
+        foreach (var colorHex in colors)
+        {
+            var colorButton = new Button
+            {
+                BackgroundColor = Color.FromArgb(colorHex),
+                HeightRequest = 40,
+                WidthRequest = 40,
+                CornerRadius = 20,
+                Margin = 5
+            };
+            colorButton.Clicked += ColorButton_Clicked;
+
+            Grid.SetRow(colorButton, row);
+            Grid.SetColumn(colorButton, column);
+            colorPaletteStack.Children.Add(colorButton);
+
+            column++;
+            if (column > 4)
+            {
+                column = 0;
+                row++;
+            }
+        }
+    
+
 
         foreach (var colorHex in colors)
         {

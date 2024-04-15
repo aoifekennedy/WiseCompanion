@@ -173,7 +173,6 @@ public partial class MedicationSearch : ContentPage
             EntryQuantity.Text = string.Empty;    
             TimePicker.Time = TimeSpan.Zero;
 
-            await DisplayAlert("Success", "Medication added successfully.", "OK");
         }
         else
         {

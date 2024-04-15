@@ -6,7 +6,7 @@ using Microsoft.Maui.Controls;
 using ServiceReference1;
 using Microsoft.Maui.Dispatching;
 using System.Xml.Linq;
-using Xamarin.KotlinX.Coroutines;
+//using Xamarin.KotlinX.Coroutines;
 using System.Collections.ObjectModel;
 
 namespace WiseCompanion.ViewModels
@@ -68,7 +68,7 @@ namespace WiseCompanion.ViewModels
                     OnPropertyChanged();
                     SaveSettings();
 
-                    MessagingCenter.Send(this, "ResetFontPicker");
+                   // MessagingCenter.Send(this, "ResetFontPicker");
                 }
             }
         }
