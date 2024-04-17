@@ -26,7 +26,7 @@ public partial class MapPage : ContentPage
         try
         {
 
-            KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+            using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
 
             var XMLResult = await client.FindMyCarAsync(emailAddress);
             client.Close();

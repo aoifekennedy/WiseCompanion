@@ -44,7 +44,7 @@ public partial class MedicationSearch : ContentPage
     {
         try
         {
-            KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+            using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
             var xmlResult = await client.GetMedicationListAsync();
             client.Close();
 

@@ -11,6 +11,13 @@ namespace WiseCompanion
             InitializeComponent();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            entryName.Focus();
+        }
+
         private async void SignUpBtn(object sender, EventArgs e)
         {
             var name = entryName.Text;
@@ -29,7 +36,7 @@ namespace WiseCompanion
 
             try
             {
-                KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+               using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
 
                 var result = await client.SignUpAsync(email, password, name, sosPhoneNo, adminEmailText, adminPasswordText);
                 client.Close();
@@ -53,5 +60,51 @@ namespace WiseCompanion
             var signInPage = new SignInPage();
             await Navigation.PushModalAsync(signInPage);
         }
+
+        private void TextBoxName_Completed(object sender, EventArgs e)
+
+        {
+
+            entryEmail.Focus();
+
+        }
+
+        private void TextBoxEmail_Completed(object sender, EventArgs e)
+
+        {
+
+            entryPassword.Focus();
+
+        }
+        private void TextBoxPassword_Completed(object sender, EventArgs e)
+
+        {
+
+            sosPhoneNumber.Focus();
+
+        }
+        private void TextBoxSOSNo_Completed(object sender, EventArgs e)
+
+        {
+
+            adminEmail.Focus();
+
+        }
+        private void TextBoxAdminEmail_Completed(object sender, EventArgs e)
+
+        {
+
+            adminPassword.Focus();
+
+        }
+
+        private void TextBoxAdminPass_Completed(object sender, EventArgs e)
+
+        {
+
+            SignUpButton.Focus();
+
+        }
+
     }
 }

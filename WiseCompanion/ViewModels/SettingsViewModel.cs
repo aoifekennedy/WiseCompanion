@@ -37,7 +37,7 @@ namespace WiseCompanion.ViewModels
 
             FontFamilies = new ObservableCollection<string>
         {
-            "Arial", "Times New Roman", "Caveat"
+            "Arial", "Calibri", "Open Sans", "Helvetica", "Georgia", "Times New Roman", "Proxima Nova"
         };
 
             LoadSettings();
@@ -77,7 +77,7 @@ namespace WiseCompanion.ViewModels
         {
             try
             {
-                var client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+                using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
                 var emailAddress = WiseCompanion.Global.EmailAddress;
 
                     Debug.WriteLine($"Attempting to load settings for: {emailAddress}");

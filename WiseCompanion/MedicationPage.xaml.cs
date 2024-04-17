@@ -30,7 +30,7 @@ public partial class MedicationPage : ContentPage
     {
         try
         {
-            KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+            using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
             var emailAddress = WiseCompanion.Global.EmailAddress;
 
             var xmlResult = await client.GetMedicationAsync(emailAddress);

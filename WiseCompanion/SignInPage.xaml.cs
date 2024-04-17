@@ -10,6 +10,13 @@ namespace WiseCompanion
             InitializeComponent();
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            entryEmail.Focus();
+        }
+
         private async void SignInBtn(object sender, EventArgs e)
         {
             var entrypassword = entryPassword.Text;
@@ -23,7 +30,7 @@ namespace WiseCompanion
 
             try
             {
-                KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+                using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
 
                 var result = await client.LoginAsync(entryemail, entrypassword);
                 client.Close();
@@ -32,7 +39,7 @@ namespace WiseCompanion
                 
 
                var homePage = new HomePage();
-                await Navigation.PushModalAsync(homePage);
+                await Navigation.PushModalAsync(homePage);  
 
             }
             catch (Exception ex)
@@ -48,5 +55,23 @@ namespace WiseCompanion
             var signUpPage = new SignUpPage();
             await Navigation.PushModalAsync(signUpPage);
         }
+
+        private void TextBoxEmail_Completed(object sender, EventArgs e)
+
+        {
+
+            entryPassword.Focus();
+
+        }
+        private void TextBoxPassword_Completed(object sender, EventArgs e)
+
+        {
+
+            SignInButton.Focus();
+
+        }
+
     }
+
+
 }

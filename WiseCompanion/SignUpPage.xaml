@@ -93,16 +93,17 @@
 
                 <!-- Sign Up Button -->
                 <Button Text="Sign Up"
-                    Clicked="SignUpBtn"
-                    BackgroundColor="#ACB9E8"
-                    TextColor="Black"
-                    CornerRadius="20"
-                    FontAttributes="Bold"
-                    FontFamily="Arial"
-                    FontSize="25"
-                    WidthRequest="300"
-                    HeightRequest="75"
-                    Padding="2"/>
+                        x:Name="SignUpButton"
+                        Clicked="SignUpBtn"
+                        BackgroundColor="#ACB9E8"
+                        TextColor="Black"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        FontFamily="Arial"
+                        FontSize="25"
+                        WidthRequest="300"
+                        HeightRequest="75"
+                        Padding="2"/>
 
 
 

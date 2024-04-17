@@ -27,6 +27,7 @@
                 <!-- Email Entry -->
                 <Frame Padding="2" CornerRadius="5" BorderColor="#cccccc" Margin="0,10,0,10">
                     <Entry x:Name="entryEmail"
+                           Completed="TextBoxEmail_Completed"
                            Placeholder="Email"
                            Keyboard="Email"
                            HorizontalOptions="FillAndExpand"
@@ -39,6 +40,7 @@
                 <!-- Password Entry -->
                 <Frame Padding="2" CornerRadius="5" BorderColor="#cccccc" Margin="0,10,0,10">
                     <Entry x:Name="entryPassword"
+                           Completed="TextBoxPassword_Completed"
                            Placeholder="Password"
                            IsPassword="true"
                            HorizontalOptions="FillAndExpand"
@@ -51,16 +53,17 @@
 
                 <!-- Sign In Button -->
                 <Button Text="Sign In"
-                    Clicked="SignInBtn"
-                    BackgroundColor="#ACB9E8"
-                    TextColor="Black"
-                    CornerRadius="20"
-                    FontAttributes="Bold"
-                    FontFamily="Arial"
-                    FontSize="25"
-                    WidthRequest="300"
-                    HeightRequest="75"
-                    Padding="2"/>
+                        x:Name="SignInButton"
+                        Clicked="SignInBtn"
+                        BackgroundColor="#ACB9E8"
+                        TextColor="Black"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        FontFamily="Arial"
+                        FontSize="25"
+                        WidthRequest="300"
+                        HeightRequest="75"
+                        Padding="2"/>
 
 
 

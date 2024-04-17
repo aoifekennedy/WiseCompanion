@@ -12,11 +12,14 @@ namespace WiseCompanion
                 .UseMauiMaps()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSans");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("Arial.ttf", "Arial");
                     fonts.AddFont("Times New Roman.ttf", "Times New Roman");
-                    fonts.AddFont("Caveat.ttf", "Caveat");
+                    fonts.AddFont("helvetica.ttf", "Helvetica");
+                    fonts.AddFont("georgia.ttf", "Georgia");
+                    fonts.AddFont("ProximaNovaReg.ttf", "Proxima Nova");
+                    fonts.AddFont("calibri.ttf", "Calibri");
                 });
 
 

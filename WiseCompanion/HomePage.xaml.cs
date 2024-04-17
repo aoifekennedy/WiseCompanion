@@ -14,12 +14,23 @@ public partial class HomePage : ContentPage
         BindingContext = new SettingsViewModel(Dispatcher);
 
         SubscribeToSettingsChanges();
+
+        NavigationPage.SetHasBackButton(this, false);
     }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        (BindingContext as SettingsViewModel)?.LoadSettings();
+
+        if (string.IsNullOrEmpty(WiseCompanion.Global.EmailAddress))
+        {
+            Shell.Current.GoToAsync("//LandingPage", animate: false);
+        }
+        else 
+        { 
+            (BindingContext as SettingsViewModel)?.LoadSettings(); 
+        }
+
     }
 
     private void SubscribeToSettingsChanges()
@@ -77,8 +88,11 @@ public partial class HomePage : ContentPage
 
     private async void LogOutBtn(object sender, EventArgs e)
     {
-        var landingPage = new LandingPage();
-        await Navigation.PushModalAsync(landingPage);
+        WiseCompanion.Global.EmailAddress = "";
+
+        await Shell.Current.Navigation.PopToRootAsync(animated: false);
+
+        await Shell.Current.GoToAsync("//LandingPage", animate: false);
     }
 
     private async void ImgBtn(object sender, EventArgs e)
@@ -105,7 +119,7 @@ public partial class HomePage : ContentPage
         {
             string userEmail = WiseCompanion.Global.EmailAddress;
 
-            KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
+           using KentapAFEClient client = new KentapAFEClient(KentapAFEClient.EndpointConfiguration.BasicHttpsBinding_IKentapAFE);
             {
                 string phoneNumber = await client.GetSOSAsync(userEmail);
 
