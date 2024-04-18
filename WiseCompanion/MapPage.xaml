@@ -3,12 +3,14 @@
              xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              x:Class="WiseCompanion.MapPage">
 
-    <VerticalStackLayout Spacing="25" Padding="30">
-        <maps:Map x:Name="map"
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+            <maps:Map x:Name="map"
               IsShowingUser="true"
               VerticalOptions="FillAndExpand"
               HeightRequest="400"/>
-        <Button x:Name="AddCarLocationButton"
+            <Button x:Name="AddCarLocationButton"
             Text="Add Car Location"
             Clicked="AddCarLocationClicked"
             BackgroundColor="#ACB9E8"
@@ -19,7 +21,7 @@
             FontSize="25"
             WidthRequest="300"
             HeightRequest="75"/>
-        <Button x:Name="RemoveCarLocationButton"
+            <Button x:Name="RemoveCarLocationButton"
             Text="Remove Car Location"
             Clicked="RemoveCarLocationClicked"
             BackgroundColor="#ACB9E8"
@@ -31,7 +33,7 @@
             WidthRequest="300"
             HeightRequest="75"
             IsVisible="False"/>
-        <Button Text="Find My Car"
+            <Button Text="Find My Car"
             Clicked="OpenInGoogleMapsClicked"
             BackgroundColor="#ACB9E8"
             TextColor="Black"
@@ -42,7 +44,7 @@
             WidthRequest="300"
             HeightRequest="75"/>
 
-        <Button Grid.Row="1" Grid.Column="0"
+            <Button Grid.Row="1" Grid.Column="0"
             Text="Back to Home Page"
             Clicked="BackButtonClicked"
             BackgroundColor="#DFB1B6"
@@ -56,6 +58,8 @@
             WidthRequest="200"
             HeightRequest="50"/>
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+
+    </ScrollView>
 
 </ContentPage>

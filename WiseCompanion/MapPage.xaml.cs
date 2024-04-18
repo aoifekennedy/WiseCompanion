@@ -43,7 +43,7 @@ public partial class MapPage : ContentPage
                 double destinationLatitude = Convert.ToDouble(Latitude);
 
                 // Construct the Google Maps URL
-                string googleMapsUrl = $"https://www.google.com/maps/dir/?api=1&destination={destinationLatitude},{destinationLongitude}&travelmode=driving";
+                string googleMapsUrl = $"https://www.google.com/maps/dir/?api=1&destination={destinationLongitude}, {destinationLatitude}&travelmode=driving";
                 await Launcher.Default.OpenAsync(new Uri(googleMapsUrl));
             }
             else
