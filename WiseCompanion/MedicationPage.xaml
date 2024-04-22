@@ -25,9 +25,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Text="Medication" FontAttributes="Bold"/>
-            <Label Grid.Column="1" Text="Quantity" FontAttributes="Bold"  Margin="-25,0,0,0"/>
-            <Label Grid.Column="2" Text="Time" FontAttributes="Bold" Margin="-15,0,0,0" />
+            <Label Grid.Column="0" Text="Medication" FontAttributes="Bold" FontSize="Medium"/>
+            <Label Grid.Column="1" Text="Quantity" FontAttributes="Bold" FontSize="Medium" Margin="-25,0,0,0"/>
+            <Label Grid.Column="2" Text="Time" FontAttributes="Bold" FontSize="Medium" Margin="-15,0,0,0" />
         </Grid>
 
         <ListView x:Name="medicationList">
@@ -41,9 +41,9 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding MedicationDescription}" Grid.Column="0" VerticalOptions="Center"/>
-                            <Label Text="{Binding Dosage}" Grid.Column="1" VerticalOptions="Center" Margin="5,0"/>
-                            <Label Text="{Binding Time}" Grid.Column="2" VerticalOptions="Center" Margin="5,0"/>
+                            <Label Text="{Binding MedicationDescription}" Grid.Column="0" VerticalOptions="Center" FontSize="Medium"/>
+                            <Label Text="{Binding Dosage}" Grid.Column="1" VerticalOptions="Center" Margin="5,0" FontSize="Medium"/>
+                            <Label Text="{Binding Time}" Grid.Column="2" VerticalOptions="Center" Margin="5,0" FontSize="Medium"/>
                             <Button x:Name="DeleteBtn" Text="Delete" Grid.Column="3" 
                                     VerticalOptions="Center" 
                                     BackgroundColor="#DFB1B6" 

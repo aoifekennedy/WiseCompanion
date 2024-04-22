@@ -29,7 +29,7 @@
             CornerRadius="10"
             FontAttributes="Bold"
             FontFamily="Arial"
-            FontSize="15"
+            FontSize="Medium"
             VerticalOptions="End"
             HorizontalOptions="Start"
             WidthRequest="200"

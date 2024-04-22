@@ -7,14 +7,15 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
-            <Label Text="Select a Background Colour:"/>
+            <Label Text="Select a Background Colour:" FontSize="Medium"/>
             <Grid x:Name="colorPaletteStack"
                   HorizontalOptions="CenterAndExpand"
                   RowDefinitions="Auto, Auto"
                   ColumnDefinitions="*, *, *, *, *"/>
 
-            <Label Text="Select Font:" />
+            <Label Text="Select Font:" FontSize="Medium" />
             <Picker x:Name="FontPicker"
+                    FontSize="Medium"
                     ItemsSource="{Binding FontFamilies}"
                     SelectedItem="{Binding SelectedFontFamily}" />
 
@@ -26,7 +27,7 @@
                     CornerRadius="10"
                     FontAttributes="Bold"
                     FontFamily="Arial"
-                    FontSize="15"
+                    FontSize="Medium"
                     VerticalOptions="End"
                     HorizontalOptions="Start"
                     WidthRequest="200"
@@ -36,72 +37,4 @@
 </ContentPage>
 
 
-
-<!--<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WiseCompanion.SettingsPage"
-             Title="Choose Background Color">
-
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="10">
-            <Label Text="Select a background color:"/>
-            <StackLayout x:Name="colorPaletteStack" Orientation="Horizontal" HorizontalOptions="CenterAndExpand"/>
-
-            <Label Text="Select Font Family:" />
-            <Picker ItemsSource="{Binding FontFamilies}"
-            SelectedItem="{Binding SelectedFontFamily}"
-            Title="Select a font family" />
-
-            <Button Grid.Row="1" Grid.Column="0"
-            Text="Back to Home Page"
-            Clicked="BackButtonClicked"
-            BackgroundColor="#DFB1B6"
-            TextColor="Black"
-            CornerRadius="10"
-            FontAttributes="Bold"
-            FontFamily="Arial"
-            FontSize="15"
-            VerticalOptions="End"
-            HorizontalOptions="Start"
-            WidthRequest="200"
-            HeightRequest="50"/>
-        </VerticalStackLayout>
-    </ScrollView>
-</ContentPage>-->
-
-
-<!--<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:WiseCompanion.ViewModels"
-             x:Class="WiseCompanion.SettingsPage"
-             Title="Settings">
-
-    <VerticalStackLayout Spacing="20" Padding="30">
-        <Label Text="Select Background Color:" />
-        <Picker ItemsSource="{Binding BackgroundColors}"
-                SelectedItem="{Binding SelectedBackgroundColor}"
-                Title="Select a background color" />
-
-        <Label Text="Select Font Family:" />
-        <Picker ItemsSource="{Binding FontFamilies}"
-                SelectedItem="{Binding SelectedFontFamily}"
-                Title="Select a font family" />
-
-
-
-        <Button Grid.Row="1" Grid.Column="0"
-                Text="Back to Home Page"
-                Clicked="BackButtonClicked"
-                BackgroundColor="#DFB1B6"
-                TextColor="Black"
-                CornerRadius="10"
-                FontAttributes="Bold"
-                FontFamily="Arial"
-                FontSize="15"
-                VerticalOptions="End"
-                HorizontalOptions="Start"
-                WidthRequest="200"
-                HeightRequest="50"/>
-    </VerticalStackLayout>
-</ContentPage>-->
 
